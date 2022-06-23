@@ -61,20 +61,42 @@
 //то вывести строку "Здравствуйте!"
 //иначе выводить строку "Неверный пароль!"
 
-const loginInput = prompt("Введите свой логин");
 
-if (loginInput === "Admin") {
-    const passwordInput = prompt("Введите свой пароль")
-    if (passwordInput === "Я главный") {
-        console.log("Здравствуйте!")
-    } else if (passwordInput === null) { 
-        console.log("Отменено")
-    } else {
-        console.log("Неверный пароль!")
-    }
-} else if (loginInput === null) {
-    console.log("отменено")
-} else { 
-    console.log("я вас не знаю")
+
+// if (loginInput === "Admin") {
+//     const passwordInput = prompt("Введите свой пароль")
+//     if (passwordInput === "Я главный") {
+//         console.log("Здравствуйте!")
+//     } else if (passwordInput === null) { 
+//         console.log("Отменено")
+//     } else {
+//         console.log("Неверный пароль!")
+//     }
+// } else if (loginInput === null) {
+//     console.log("отменено")
+// } else { 
+//     console.log("я вас не знаю")
+// }
+// console.log(loginInput)
+const loginInput = prompt("Введите свой логин");
+switch (loginInput) {
+    case "Admin" :
+        const passwordInput = prompt ("Введите свой пароль");
+            switch (passwordInput) {
+                case "Я главный" :
+                    console.log("Здравствуйте!");
+                    break;
+                case null: 
+                console.log("Отменено");
+                break;
+                default:
+                    console.log("Неверный пароль");
+            }
+        console.log(loginInput);
+        break;
+    case null:
+        console.log("Отменено");
+        break;
+    default:
+        console.log("Я вас не знаю");
 }
-console.log(loginInput)

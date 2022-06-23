@@ -78,25 +78,44 @@
 //     console.log("я вас не знаю")
 // }
 // console.log(loginInput)
-const loginInput = prompt("Введите свой логин");
-switch (loginInput) {
-    case "Admin" :
-        const passwordInput = prompt ("Введите свой пароль");
-            switch (passwordInput) {
-                case "Я главный" :
-                    console.log("Здравствуйте!");
-                    break;
-                case null: 
-                console.log("Отменено");
-                break;
-                default:
-                    console.log("Неверный пароль");
-            }
-        console.log(loginInput);
-        break;
-    case null:
-        console.log("Отменено");
-        break;
-    default:
-        console.log("Я вас не знаю");
+// const loginInput = prompt("Введите свой логин");
+// switch (loginInput) {
+//     case "Admin" :
+//         const passwordInput = prompt ("Введите свой пароль");
+//             switch (passwordInput) {
+//                 case "Я главный" :
+//                     console.log("Здравствуйте!");
+//                     break;
+//                 case null: 
+//                 console.log("Отменено");
+//                 break;
+//                 default:
+//                     console.log("Неверный пароль");
+//             }
+//         console.log(loginInput);
+//         break;
+//     case null:
+//         console.log("Отменено");
+//         break;
+//     default:
+//         console.log("Я вас не знаю");
+// }
+// 5. При загрузке страницы пользователю предлагается
+//в prompt ввести число. Ввод добавляется к значению
+//переменной total.
+//Операция ввода числа продолжается до тех пор,
+//пока пользователь не нажмет кнопку Cancel в prompt.
+//После того как пользователь прекратил ввод нажав на
+//кнопку Cancel, показать alert со строкой "Общая сумма введенных чисел равна [число]."
+//Делать проверку,что пользователь ввел именно число,
+//а не произвольный набор символов, не нужно. 
+
+let userInput = prompt("Введите число")
+let total = 0;
+while (userInput) { 
+    total += Number(userInput);
+    userInput = prompt("Введите число")
 }
+alert (`Общая сумма введенных чисел равна ${total}.`)
+console.log(total)
+

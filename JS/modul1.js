@@ -209,17 +209,39 @@
 //которая ищет самое маленькое число в массиве
 //Добавь проверку что функция получает массив
 
-function findSmallerNumber(numbers) {
-    if (!Array.isArray(numbers)) {
-        console.log("Numbers is not Array");
-        return
+// function findSmallerNumber(numbers) {
+//     if (!Array.isArray(numbers)) {
+//         console.log("Numbers is not Array");
+//         return
+//     }
+//     let smallerNumber = numbers[0];
+//     for (const value of numbers) {
+//         if (smallerNumber > value) {
+//             smallerNumber = value
+//         }
+//     }
+//     console.log(smallerNumber);
+// }
+// findSmallerNumber([9,2,3,4,5,6])
+
+//Напишите функцию findTheColor()
+//которая принимает название цвета
+//определяет его наличие в массиве
+//если цвет есть, усталавливет его как фон документа
+//если цвета нет выводит console.error('Такой цвет не найден');
+//и устанавливает цвет документа красный
+// document.body.style.background = 'red';
+//const colors = ['blue', 'yellow', 'olive', 'fuchsia', 'lime', 'aqua', 'maroon']
+
+const colors = ['blue', 'yellow', 'olive', 'fuchsia', 'lime', 'aqua', 'maroon']
+
+function findTheColor(colors, findColor) {
+    const colorInArray = colors.includes(findColor);
+    if (colorInArray) {
+        document.body.style.background = findColor;
+    } else {
+        document.body.style.background = 'red';
+        console.error('Такой цвет не найден');
     }
-    let smallerNumber = numbers[0];
-    for (const value of numbers) {
-        if (smallerNumber > value) {
-            smallerNumber = value
-        }
-    }
-    console.log(smallerNumber);
 }
-findSmallerNumber([9,2,3,4,5,6])
+findTheColor(colors, 'black')

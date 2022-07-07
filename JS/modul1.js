@@ -157,11 +157,27 @@
 //меньшее из чисел a, b
 //нужно добавить проверку, что функция получает чиcла
 
-function min(a, b) {
-    if (typeof a !== 'number' || typeof b !== 'number') {
-        console.log('Не є число')
-        return
-    }
-    if (a>b){console.log(b)}else{console.log(a)}
-}
-min('ccc',2)
+// function min(a, b) {
+//     if (typeof a !== 'number' || typeof b !== 'number') {
+//         console.log('Не є число')
+//         return
+//     }
+//     if (a>b){console.log(b)}else{console.log(a)}
+// }
+// min('ccc',2)
+
+// Задание на собеседование
+// const aray = [1, 2, 3, 4, 5, 6, 7];
+// // console.log(aray[aray.length - 1])
+// // console.log(aray[aray.length - 1 - 1 ])
+// // console.log(aray[aray.length - 1 - 2])
+// // console.log(aray[aray.length - 1 - 3])
+// for (let i = 0; i < aray.length / 2; i += 1) {
+//     let temp = aray[i]
+//     console.log(aray[aray.length - 1 - i])
+//     aray[i] = aray[aray.length - 1 - i]
+//     aray[aray.length -1 -i] = temp
+//     console.log(aray)
+// }
+
+const aray = [1, 2, 3, 4, 5, 6, 7];

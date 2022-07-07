@@ -129,11 +129,23 @@
 //введёт число больше 100, либо не нажмет кнопку
 //Отмена в prompt
 
-let userInput = prompt("Введите число")
-let total = 100;
+//Создайте массив styles с элементами «Джаз» и «Блюз».
+//Добавьте «Рок-н-ролл» в конец.
+//Замените значение «Блюз» на «Классика».
+//Удалите первый элемент массива и выведите его в консоль.
+//Вставьте «Рэп» и «Регги» в начало массива.
+
+const styles = ['Джаз', 'Блюз']
+console.log(styles.push('Рок-н-рол'))
+
+// styles[1] = 'Классика'
+styles.splice(1, 1, 'Классика')
+// styles.shift()
+styles.splice(0, 1)
+// console.log(styles.shift())
+// styles.splice(0, 0, 'Реп', 'Реггі')
+styles.unshift('Реп', 'Реггі')
+
+console.log(styles)
 
 
-while (userInput <= total && userInput !== null) {
-    userInput = Number(prompt("Введите число больше 100"));
-}
-console.log('Ok')

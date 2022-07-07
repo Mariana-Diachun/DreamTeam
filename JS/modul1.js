@@ -42,10 +42,6 @@
 
 // console.log(total);
 
-
-
-
-
 //4. Напишите код, который будет спрашивать
 //логин с помощью prompt и логировать результат
 //в консоль браузера
@@ -61,20 +57,18 @@
 //то вывести строку "Здравствуйте!"
 //иначе выводить строку "Неверный пароль!"
 
-
-
 // if (loginInput === "Admin") {
 //     const passwordInput = prompt("Введите свой пароль")
 //     if (passwordInput === "Я главный") {
 //         console.log("Здравствуйте!")
-//     } else if (passwordInput === null) { 
+//     } else if (passwordInput === null) {
 //         console.log("Отменено")
 //     } else {
 //         console.log("Неверный пароль!")
 //     }
 // } else if (loginInput === null) {
 //     console.log("отменено")
-// } else { 
+// } else {
 //     console.log("я вас не знаю")
 // }
 // console.log(loginInput)
@@ -86,7 +80,7 @@
 //                 case "Я главный" :
 //                     console.log("Здравствуйте!");
 //                     break;
-//                 case null: 
+//                 case null:
 //                 console.log("Отменено");
 //                 break;
 //                 default:
@@ -108,18 +102,16 @@
 //После того как пользователь прекратил ввод нажав на
 //кнопку Cancel, показать alert со строкой "Общая сумма введенных чисел равна [число]."
 //Делать проверку,что пользователь ввел именно число,
-//а не произвольный набор символов, не нужно. 
+//а не произвольный набор символов, не нужно.
 
 // let userInput = prompt("Введите число")
 // let total = 0;
-// while (userInput) { 
+// while (userInput) {
 //     total += Number(userInput);
 //     userInput = prompt("Введите число")
 // }
 // alert (`Общая сумма введенных чисел равна ${total}.`)
 // console.log(total)
-
-
 
 //7. Напишите цикл, который предлагает ввести
 //число больше 100 через prompt.
@@ -135,17 +127,28 @@
 //Удалите первый элемент массива и выведите его в консоль.
 //Вставьте «Рэп» и «Регги» в начало массива.
 
-const styles = ['Джаз', 'Блюз']
-console.log(styles.push('Рок-н-рол'))
+// const styles = ['Джаз', 'Блюз']
+// console.log(styles.push('Рок-н-рол'))
 
 // styles[1] = 'Классика'
-styles.splice(1, 1, 'Классика')
+// styles.splice(1, 1, 'Классика')
 // styles.shift()
-styles.splice(0, 1)
+// styles.splice(0, 1)
 // console.log(styles.shift())
 // styles.splice(0, 0, 'Реп', 'Реггі')
-styles.unshift('Реп', 'Реггі')
+// styles.unshift('Реп', 'Реггі')
 
-console.log(styles)
+// console.log(styles)
 
+//Лёша на полке клопа нашёл
+//А роза упала на лапу Азора
 
+function checkPalindrome(str) {
+  const str1 = str.toLowerCase().replaceAll(" ", "");
+  const strArr = str1.split("").reverse();
+  const checkStr = strArr.join("");
+
+  console.log(str1 === checkStr);
+}
+
+checkPalindrome("А роза упала на лапу Азора");

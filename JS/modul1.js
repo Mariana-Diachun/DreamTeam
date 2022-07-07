@@ -143,12 +143,25 @@
 //Лёша на полке клопа нашёл
 //А роза упала на лапу Азора
 
-function checkPalindrome(str) {
-  const str1 = str.toLowerCase().replaceAll(" ", "");
-  const strArr = str1.split("").reverse();
-  const checkStr = strArr.join("");
+// function checkPalindrome(str) {
+//   const str1 = str.toLowerCase().replaceAll(" ", "");
+//   const strArr = str1.split("").reverse();
+//   const checkStr = strArr.join("");
 
-  console.log(str1 === checkStr);
+//   console.log(str1 === checkStr);
+// }
+
+// checkPalindrome("А роза упала на лапу Азора");
+
+//Напишите функцию min(a, b), которая возвращает
+//меньшее из чисел a, b
+//нужно добавить проверку, что функция получает чиcла
+
+function min(a, b) {
+    if (typeof a !== 'number' || typeof b !== 'number') {
+        console.log('Не є число')
+        return
+    }
+    if (a>b){console.log(b)}else{console.log(a)}
 }
-
-checkPalindrome("А роза упала на лапу Азора");
+min('ccc',2)

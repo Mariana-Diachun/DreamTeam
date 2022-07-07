@@ -197,10 +197,29 @@
 //Нумерация элементов должна начинаться с 1.
 //['Джаз', 'Блюз', 'Рок-н-ролл', 'Регги', 'Рэп']
 
-function logItems(array) {
-  for (let i = 0; i < array.length; i += 1) {
-    console.log(`${i + 1} - ${array[i]}`);
-  }
-}
+// function logItems(array) {
+//   for (let i = 0; i < array.length; i += 1) {
+//     console.log(`${i + 1} - ${array[i]}`);
+//   }
+// }
 
-logItems(["Джаз", "Блюз", "Рок-н-ролл", "Регги", "Рэп"]);
+// logItems(["Джаз", "Блюз", "Рок-н-ролл", "Регги", "Рэп"]);
+
+//Напиши функцию findSmallerNumber(numbers)
+//которая ищет самое маленькое число в массиве
+//Добавь проверку что функция получает массив
+
+function findSmallerNumber(numbers) {
+    if (!Array.isArray(numbers)) {
+        console.log("Numbers is not Array");
+        return
+    }
+    let smallerNumber = numbers[0];
+    for (const value of numbers) {
+        if (smallerNumber > value) {
+            smallerNumber = value
+        }
+    }
+    console.log(smallerNumber);
+}
+findSmallerNumber([9,2,3,4,5,6])

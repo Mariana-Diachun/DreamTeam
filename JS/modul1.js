@@ -180,4 +180,27 @@
 //     console.log(aray)
 // }
 
-const aray = [1, 2, 3, 4, 5, 6, 7];
+// const aray = [1, 2, 3, 4, 5, 6, 7];
+// let newAray = [];
+
+// for (let i = 0; i < aray.length; i += 1) {
+//   // console.log(aray[aray.length - 1 - i]);
+//   newAray.push(aray[aray.length - 1 - i]);
+// }
+// console.log(newAray);
+
+// Example
+//Напишите функцию logItems(array) которая принимает
+//массив и использует цикл for, который для каждого
+//элемента массива будет выводить сообщение в формате
+//<номер элемента> - <значение элемента>
+//Нумерация элементов должна начинаться с 1.
+//['Джаз', 'Блюз', 'Рок-н-ролл', 'Регги', 'Рэп']
+
+function logItems(array) {
+  for (let i = 0; i < array.length; i += 1) {
+    console.log(`${i + 1} - ${array[i]}`);
+  }
+}
+
+logItems(["Джаз", "Блюз", "Рок-н-ролл", "Регги", "Рэп"]);

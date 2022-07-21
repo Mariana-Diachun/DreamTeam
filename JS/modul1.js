@@ -178,9 +178,23 @@ const vehicles = [
 ];
 //Реализовать фильтер по свойству amount и получить
 //только название модели
-const getAvailableCarNames = (cars, amountThreshold) => {
-  return cars
-    .filter(({ amount }) => amount > amountThreshold)
-    .map(({ model }) => model);
-};
-console.log(getAvailableCarNames(vehicles, 5));
+
+const getAvailableCarNames = (cars, amountThereshold) => {
+    return cars.reduce((acc, car) => {
+        if (car.amount > amountThereshold) {
+            acc.push(car.model)
+        }
+        return acc
+    }, [])
+}
+console.log(getAvailableCarNames(vehicles, 10));
+
+
+
+// const getAvailableCarNames = (cars, amountThreshold) => {
+//   return cars
+//     .filter(({ amount }) => amount > amountThreshold)
+//     .map(({ model }) => model);
+// };
+// console.log(getAvailableCarNames(vehicles, 5));
+

@@ -305,18 +305,27 @@ const tweets = [
   { id: "003", likes: 8, tags: ["css", "react"] },
   { id: "004", likes: 0, tags: ["js", "nodejs", "react"] },
 ];
+// const getTotalTags = (tweets) => {
+//   return tweets
+//     .flatMap((tweet) => tweet.tags)
+//     .reduce((acc, tweet) => {
+//       if (!acc[tweet]) {
+//         acc[tweet] = 1;
+//       } else {
+//         acc[tweet] = acc[tweet] + 1;
+//       }
+//       //   console.log(tweet);
+//       // console.log(acc[tweet]);
+//       return acc;
+//     }, {});
+// };
+// console.log(getTotalTags(tweets));
+
 const getTotalTags = (tweets) => {
   return tweets
     .flatMap((tweet) => tweet.tags)
-    .reduce((acc, tweet) => {
-      if (!acc[tweet]) {
-        acc[tweet] = 1;
-      } else {
-        acc[tweet] = acc[tweet] + 1;
-      }
-      //   console.log(tweet);
-      // console.log(acc[tweet]);
-      return acc;
-    }, {});
+    .reduce((acc, tweet) => ({
+      ...acc,
+      [tweet]: acc[tweet] ? acc[tweet] + 1 : 1}), {});
 };
 console.log(getTotalTags(tweets));

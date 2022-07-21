@@ -321,11 +321,21 @@ const tweets = [
 // };
 // console.log(getTotalTags(tweets));
 
-const getTotalTags = (tweets) => {
-  return tweets
-    .flatMap((tweet) => tweet.tags)
-    .reduce((acc, tweet) => ({
-      ...acc,
-      [tweet]: acc[tweet] ? acc[tweet] + 1 : 1}), {});
-};
-console.log(getTotalTags(tweets));
+// const getTotalTags = (tweets) => {
+//   return tweets
+//     .flatMap((tweet) => tweet.tags)
+//     .reduce((acc, tweet) => ({
+//       ...acc,
+//       [tweet]: acc[tweet] ? acc[tweet] + 1 : 1}), {});
+// };
+// console.log(getTotalTags(tweets));
+
+
+
+//Создание массива значений Фаренгейта из массива значений Цельсия
+// (32 °F − 32) × 5/9 = 0 °C
+// t * 1.8 + 32;
+
+let celsius = [-15, -5, 0, 10, 16, 20, 24, 32];
+const farenherit = celsius.map(temp => temp * 1.8 + 32);
+console.log(farenherit);

@@ -233,15 +233,53 @@
 // document.body.style.background = 'red';
 //const colors = ['blue', 'yellow', 'olive', 'fuchsia', 'lime', 'aqua', 'maroon']
 
-const colors = ['blue', 'yellow', 'olive', 'fuchsia', 'lime', 'aqua', 'maroon']
+// const colors = ['blue', 'yellow', 'olive', 'fuchsia', 'lime', 'aqua', 'maroon']
 
-function findTheColor(colors, findColor) {
-    const colorInArray = colors.includes(findColor);
-    if (colorInArray) {
-        document.body.style.background = findColor;
-    } else {
-        document.body.style.background = 'red';
-        console.error('Такой цвет не найден');
+// function findTheColor(colors, findColor) {
+//     const colorInArray = colors.includes(findColor);
+//     if (colorInArray) {
+//         document.body.style.background = findColor;
+//     } else {
+//         document.body.style.background = 'red';
+//         console.error('Такой цвет не найден');
+//     }
+// }
+// findTheColor(colors, 'black')
+
+//Напишите функцию unique(arr), которая возвращает массив,
+//содержащий только уникальные элементы arr.
+//const words = ["HTML","CSS", "JS", "React", "JS", "CSS", "JS",
+// "Node.js", "JS", "React", "CSS", "React", "HTML", "Node.js"];
+
+const words = [
+  "HTML",
+  "CSS",
+  "JS",
+  "React",
+  "JS",
+  "CSS",
+  "JS",
+  "Node.js",
+  "JS",
+  "React",
+  "CSS",
+  "React",
+  "HTML",
+  "Node.js",
+];
+
+function unique(arr) {
+  const newArr = [];
+  for (let i = 0; i < arr.length; i += 1) {
+    console.log(arr.indexOf(arr[i]));
+    console.log(i);
+    console.log(i === arr.indexOf(arr[i]));
+    console.log(arr[isSecureContext]);
+    console.log("------");
+    if (arr.indexOf(arr[i]) === i) {
+      newArr.push(arr[i]);
     }
+  }
+  console.log(newArr);
 }
-findTheColor(colors, 'black')
+unique(words);

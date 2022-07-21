@@ -94,101 +94,99 @@
 //     default:
 //         console.log("Я вас не знаю");
 // }
-const vehicles = [
-  {
-    make: "Honda",
-    model: "CR-V",
-    type: "suv",
-    amount: 14,
-    price: 24045,
-    onSale: true,
-  },
-  {
-    make: "Honda",
-    model: "Accord",
-    type: "sedan",
-    amount: 2,
-    price: 22455,
-    onSale: true,
-  },
-  {
-    make: "Mazda",
-    model: "Mazda 6",
-    type: "sedan",
-    amount: 8,
-    price: 24195,
-    onSale: false,
-  },
-  {
-    make: "Mazda",
-    model: "CX-9",
-    type: "suv",
-    amount: 7,
-    price: 31520,
-    onSale: true,
-  },
-  {
-    make: "Toyota",
-    model: "4Runner",
-    type: "suv",
-    amount: 19,
-    price: 34210,
-    onSale: false,
-  },
-  {
-    make: "Toyota",
-    model: "Sequoia",
-    type: "suv",
-    amount: 16,
-    price: 45560,
-    onSale: false,
-  },
-  {
-    make: "Toyota",
-    model: "Tacoma",
-    type: "truck",
-    amount: 4,
-    price: 24320,
-    onSale: true,
-  },
-  {
-    make: "Ford",
-    model: "F-150",
-    type: "truck",
-    amount: 11,
-    price: 27110,
-    onSale: true,
-  },
-  {
-    make: "Ford",
-    model: "Fusion",
-    type: "sedan",
-    amount: 13,
-    price: 22120,
-    onSale: true,
-  },
-  {
-    make: "Ford",
-    model: "Explorer",
-    type: "suv",
-    amount: 6,
-    price: 31660,
-    onSale: false,
-  },
-];
+// const vehicles = [
+//   {
+//     make: "Honda",
+//     model: "CR-V",
+//     type: "suv",
+//     amount: 14,
+//     price: 24045,
+//     onSale: true,
+//   },
+//   {
+//     make: "Honda",
+//     model: "Accord",
+//     type: "sedan",
+//     amount: 2,
+//     price: 22455,
+//     onSale: true,
+//   },
+//   {
+//     make: "Mazda",
+//     model: "Mazda 6",
+//     type: "sedan",
+//     amount: 8,
+//     price: 24195,
+//     onSale: false,
+//   },
+//   {
+//     make: "Mazda",
+//     model: "CX-9",
+//     type: "suv",
+//     amount: 7,
+//     price: 31520,
+//     onSale: true,
+//   },
+//   {
+//     make: "Toyota",
+//     model: "4Runner",
+//     type: "suv",
+//     amount: 19,
+//     price: 34210,
+//     onSale: false,
+//   },
+//   {
+//     make: "Toyota",
+//     model: "Sequoia",
+//     type: "suv",
+//     amount: 16,
+//     price: 45560,
+//     onSale: false,
+//   },
+//   {
+//     make: "Toyota",
+//     model: "Tacoma",
+//     type: "truck",
+//     amount: 4,
+//     price: 24320,
+//     onSale: true,
+//   },
+//   {
+//     make: "Ford",
+//     model: "F-150",
+//     type: "truck",
+//     amount: 11,
+//     price: 27110,
+//     onSale: true,
+//   },
+//   {
+//     make: "Ford",
+//     model: "Fusion",
+//     type: "sedan",
+//     amount: 13,
+//     price: 22120,
+//     onSale: true,
+//   },
+//   {
+//     make: "Ford",
+//     model: "Explorer",
+//     type: "suv",
+//     amount: 6,
+//     price: 31660,
+//     onSale: false,
+//   },
+// ];
 // Получить машины на распродаже и сортировать по убыванию цены
 
-const carsOnSale = (cars) => {
-  return cars.filter(car => car.onSale)
-  .sort((a, b) => b.price - a.price)
-  
+// const carsOnSale = (cars) => {
+//   return cars.filter(car => car.onSale)
+//   .sort((a, b) => b.price - a.price)
 
-}
-console.table(carsOnSale(vehicles))
+// }
+// console.table(carsOnSale(vehicles))
 
 //Реализовать фильтер по свойству amount и получить
 //только название модели
-
 
 // const getAvailableCarNames = (cars, amountThreshold) => {
 //   return cars
@@ -196,8 +194,6 @@ console.table(carsOnSale(vehicles))
 //     .map(({ model }) => model);
 // };
 // console.log(getAvailableCarNames(vehicles, 5));
-
-
 
 // const getAvailableCarNames = (cars, amountThereshold) => {
 //     return cars.reduce((acc, car) => {
@@ -208,9 +204,6 @@ console.table(carsOnSale(vehicles))
 //     }, [])
 // }
 // console.log(getAvailableCarNames(vehicles, 10));
-
-
-
 
 // const ownMap = (arr, callback) => {
 //   // console.log(arr);
@@ -231,7 +224,6 @@ console.table(carsOnSale(vehicles))
 // const planetLangth = ownMap(planets, (planet) => planet.length)
 // console.log(planetLangth);
 
-
 // const ownFilter = (arr, callback) => {
 //   const newArray = []
 //   for (let i = 0; i < arr.length; i += 1) {
@@ -251,11 +243,57 @@ console.table(carsOnSale(vehicles))
 // });
 // console.log(positiveValues);
 
+//6. Собрать в allTopics массив всех предметов всех курсов
+//Выполнить фильтрацию, оставив в uniqueTopics только уникальные элементы
 
+const courses = [
+  {
+    name: "Basic HTML+CSS",
+    topics: ["VSCode", "HTML", "CSS", "GitHub", "GitHub Desctop"],
+  },
+  {
+    name: "Intermediate HTML+CSS",
+    topics: ["VSCode", "HTML", "CSS", "GitHub", "Git", "Terminal"],
+  },
+  {
+    name: "Basic JavaScript",
+    topics: [
+      "VSCode",
+      "Type system",
+      "Loops",
+      "Function",
+      "Git",
+      "Conditions",
+      "Classes",
+      "GitHub",
+      "DOM",
+    ],
+  },
+  {
+    name: "Intermediate JavaScript",
+    topics: [
+      "VSCode",
+      "NPM",
+      "Bundlers",
+      "Transpiling",
+      "Git",
+      "Promises",
+      "AJAX",
+      "GitHub",
+    ],
+  },
+];
 
+// const getSubjects = (courses) => {
+//   return courses
+//     .flatMap((course) => course.topics)
+//     .filter((course, idx, arr) => arr.indexOf(course) === idx);
+// };
 
+const getSubjects = (courses) => {
+  return courses
+    .reduce((previous, course) => [...previous, ...course.topics], [])
+    .filter((course, idx, arr) => arr.indexOf(course) === idx);
+};
 
-
-
-
-
+console.log(getSubjects(courses));

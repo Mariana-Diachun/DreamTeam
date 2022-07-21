@@ -94,192 +94,93 @@
 //     default:
 //         console.log("Я вас не знаю");
 // }
-// 5. При загрузке страницы пользователю предлагается
-//в prompt ввести число. Ввод добавляется к значению
-//переменной total.
-//Операция ввода числа продолжается до тех пор,
-//пока пользователь не нажмет кнопку Cancel в prompt.
-//После того как пользователь прекратил ввод нажав на
-//кнопку Cancel, показать alert со строкой "Общая сумма введенных чисел равна [число]."
-//Делать проверку,что пользователь ввел именно число,
-//а не произвольный набор символов, не нужно.
-
-// let userInput = prompt("Введите число")
-// let total = 0;
-// while (userInput) {
-//     total += Number(userInput);
-//     userInput = prompt("Введите число")
-// }
-// alert (`Общая сумма введенных чисел равна ${total}.`)
-// console.log(total)
-
-//7. Напишите цикл, который предлагает ввести
-//число больше 100 через prompt.
-//Если посетитель ввёл другое число - попросить
-//ввести ещё раз и так далее.
-//Цикл должет спрашивать число, пока посетитель не
-//введёт число больше 100, либо не нажмет кнопку
-//Отмена в prompt
-
-//Создайте массив styles с элементами «Джаз» и «Блюз».
-//Добавьте «Рок-н-ролл» в конец.
-//Замените значение «Блюз» на «Классика».
-//Удалите первый элемент массива и выведите его в консоль.
-//Вставьте «Рэп» и «Регги» в начало массива.
-
-// const styles = ['Джаз', 'Блюз']
-// console.log(styles.push('Рок-н-рол'))
-
-// styles[1] = 'Классика'
-// styles.splice(1, 1, 'Классика')
-// styles.shift()
-// styles.splice(0, 1)
-// console.log(styles.shift())
-// styles.splice(0, 0, 'Реп', 'Реггі')
-// styles.unshift('Реп', 'Реггі')
-
-// console.log(styles)
-
-//Лёша на полке клопа нашёл
-//А роза упала на лапу Азора
-
-// function checkPalindrome(str) {
-//   const str1 = str.toLowerCase().replaceAll(" ", "");
-//   const strArr = str1.split("").reverse();
-//   const checkStr = strArr.join("");
-
-//   console.log(str1 === checkStr);
-// }
-
-// checkPalindrome("А роза упала на лапу Азора");
-
-//Напишите функцию min(a, b), которая возвращает
-//меньшее из чисел a, b
-//нужно добавить проверку, что функция получает чиcла
-
-// function min(a, b) {
-//     if (typeof a !== 'number' || typeof b !== 'number') {
-//         console.log('Не є число')
-//         return
-//     }
-//     if (a>b){console.log(b)}else{console.log(a)}
-// }
-// min('ccc',2)
-
-// Задание на собеседование
-// const aray = [1, 2, 3, 4, 5, 6, 7];
-// // console.log(aray[aray.length - 1])
-// // console.log(aray[aray.length - 1 - 1 ])
-// // console.log(aray[aray.length - 1 - 2])
-// // console.log(aray[aray.length - 1 - 3])
-// for (let i = 0; i < aray.length / 2; i += 1) {
-//     let temp = aray[i]
-//     console.log(aray[aray.length - 1 - i])
-//     aray[i] = aray[aray.length - 1 - i]
-//     aray[aray.length -1 -i] = temp
-//     console.log(aray)
-// }
-
-// const aray = [1, 2, 3, 4, 5, 6, 7];
-// let newAray = [];
-
-// for (let i = 0; i < aray.length; i += 1) {
-//   // console.log(aray[aray.length - 1 - i]);
-//   newAray.push(aray[aray.length - 1 - i]);
-// }
-// console.log(newAray);
-
-// Example
-//Напишите функцию logItems(array) которая принимает
-//массив и использует цикл for, который для каждого
-//элемента массива будет выводить сообщение в формате
-//<номер элемента> - <значение элемента>
-//Нумерация элементов должна начинаться с 1.
-//['Джаз', 'Блюз', 'Рок-н-ролл', 'Регги', 'Рэп']
-
-// function logItems(array) {
-//   for (let i = 0; i < array.length; i += 1) {
-//     console.log(`${i + 1} - ${array[i]}`);
-//   }
-// }
-
-// logItems(["Джаз", "Блюз", "Рок-н-ролл", "Регги", "Рэп"]);
-
-//Напиши функцию findSmallerNumber(numbers)
-//которая ищет самое маленькое число в массиве
-//Добавь проверку что функция получает массив
-
-// function findSmallerNumber(numbers) {
-//     if (!Array.isArray(numbers)) {
-//         console.log("Numbers is not Array");
-//         return
-//     }
-//     let smallerNumber = numbers[0];
-//     for (const value of numbers) {
-//         if (smallerNumber > value) {
-//             smallerNumber = value
-//         }
-//     }
-//     console.log(smallerNumber);
-// }
-// findSmallerNumber([9,2,3,4,5,6])
-
-//Напишите функцию findTheColor()
-//которая принимает название цвета
-//определяет его наличие в массиве
-//если цвет есть, усталавливет его как фон документа
-//если цвета нет выводит console.error('Такой цвет не найден');
-//и устанавливает цвет документа красный
-// document.body.style.background = 'red';
-//const colors = ['blue', 'yellow', 'olive', 'fuchsia', 'lime', 'aqua', 'maroon']
-
-// const colors = ['blue', 'yellow', 'olive', 'fuchsia', 'lime', 'aqua', 'maroon']
-
-// function findTheColor(colors, findColor) {
-//     const colorInArray = colors.includes(findColor);
-//     if (colorInArray) {
-//         document.body.style.background = findColor;
-//     } else {
-//         document.body.style.background = 'red';
-//         console.error('Такой цвет не найден');
-//     }
-// }
-// findTheColor(colors, 'black')
-
-//Напишите функцию unique(arr), которая возвращает массив,
-//содержащий только уникальные элементы arr.
-//const words = ["HTML","CSS", "JS", "React", "JS", "CSS", "JS",
-// "Node.js", "JS", "React", "CSS", "React", "HTML", "Node.js"];
-
-const words = [
-  "HTML",
-  "CSS",
-  "JS",
-  "React",
-  "JS",
-  "CSS",
-  "JS",
-  "Node.js",
-  "JS",
-  "React",
-  "CSS",
-  "React",
-  "HTML",
-  "Node.js",
+const vehicles = [
+  {
+    make: "Honda",
+    model: "CR-V",
+    type: "suv",
+    amount: 14,
+    price: 24045,
+    onSale: true,
+  },
+  {
+    make: "Honda",
+    model: "Accord",
+    type: "sedan",
+    amount: 2,
+    price: 22455,
+    onSale: true,
+  },
+  {
+    make: "Mazda",
+    model: "Mazda 6",
+    type: "sedan",
+    amount: 8,
+    price: 24195,
+    onSale: false,
+  },
+  {
+    make: "Mazda",
+    model: "CX-9",
+    type: "suv",
+    amount: 7,
+    price: 31520,
+    onSale: true,
+  },
+  {
+    make: "Toyota",
+    model: "4Runner",
+    type: "suv",
+    amount: 19,
+    price: 34210,
+    onSale: false,
+  },
+  {
+    make: "Toyota",
+    model: "Sequoia",
+    type: "suv",
+    amount: 16,
+    price: 45560,
+    onSale: false,
+  },
+  {
+    make: "Toyota",
+    model: "Tacoma",
+    type: "truck",
+    amount: 4,
+    price: 24320,
+    onSale: true,
+  },
+  {
+    make: "Ford",
+    model: "F-150",
+    type: "truck",
+    amount: 11,
+    price: 27110,
+    onSale: true,
+  },
+  {
+    make: "Ford",
+    model: "Fusion",
+    type: "sedan",
+    amount: 13,
+    price: 22120,
+    onSale: true,
+  },
+  {
+    make: "Ford",
+    model: "Explorer",
+    type: "suv",
+    amount: 6,
+    price: 31660,
+    onSale: false,
+  },
 ];
-
-function unique(arr) {
-  const newArr = [];
-  for (let i = 0; i < arr.length; i += 1) {
-    console.log(arr.indexOf(arr[i]));
-    console.log(i);
-    console.log(i === arr.indexOf(arr[i]));
-    console.log(arr[isSecureContext]);
-    console.log("------");
-    if (arr.indexOf(arr[i]) === i) {
-      newArr.push(arr[i]);
-    }
-  }
-  console.log(newArr);
-}
-unique(words);
+//Реализовать фильтер по свойству amount и получить
+//только название модели
+const getAvailableCarNames = (cars, amountThreshold) => {
+  return cars
+    .filter(({ amount }) => amount > amountThreshold)
+    .map(({ model }) => model);
+};
+console.log(getAvailableCarNames(vehicles, 5));

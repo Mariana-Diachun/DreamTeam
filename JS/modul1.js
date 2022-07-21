@@ -179,17 +179,6 @@ const vehicles = [
 //Реализовать фильтер по свойству amount и получить
 //только название модели
 
-const getAvailableCarNames = (cars, amountThereshold) => {
-    return cars.reduce((acc, car) => {
-        if (car.amount > amountThereshold) {
-            acc.push(car.model)
-        }
-        return acc
-    }, [])
-}
-console.log(getAvailableCarNames(vehicles, 10));
-
-
 
 // const getAvailableCarNames = (cars, amountThreshold) => {
 //   return cars
@@ -197,4 +186,62 @@ console.log(getAvailableCarNames(vehicles, 10));
 //     .map(({ model }) => model);
 // };
 // console.log(getAvailableCarNames(vehicles, 5));
+
+
+
+// const getAvailableCarNames = (cars, amountThereshold) => {
+//     return cars.reduce((acc, car) => {
+//         if (car.amount > amountThereshold) {
+//             acc.push(car.model)
+//         }
+//         return acc
+//     }, [])
+// }
+// console.log(getAvailableCarNames(vehicles, 10));
+
+
+
+
+// const ownMap = (arr, callback) => {
+//   // console.log(arr);
+//   // console.log(callback);
+//   const newArray = []
+//   for (let i = 0; i < arr.length; i += 1) {
+//     // console.log(arr[i]);
+//     newArray.push(callback(arr[i], i, arr));
+//   }
+//   return newArray;
+// }
+
+// const planets = ['Земля', 'Марс', 'Венера', 'Юпітер'];
+
+// const planetsInUpperCase = ownMap(planets, (planet, index, array) => planet.toUpperCase());
+// console.log(planetsInUpperCase);
+
+// const planetLangth = ownMap(planets, (planet) => planet.length)
+// console.log(planetLangth);
+
+
+const ownFilter = (arr, callback) => {
+  const newArray = []
+  for (let i = 0; i < arr.length; i += 1) {
+    if (callback(arr[i], i, arr)) {
+      newArray.push(arr[i]);
+   };
+  }
+  return newArray;
+}
+
+const values = [51, -3, 27, 100500, 21, 68, -42, -37, 100001];
+
+const positiveValues = ownFilter(values, (value, index, arr) =>
+{
+  // console.log(value); console.log(index); console.log(arr);
+  return value >= 0
+});
+console.log(positiveValues);
+
+
+
+
 

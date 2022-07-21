@@ -176,6 +176,16 @@ const vehicles = [
     onSale: false,
   },
 ];
+// Получить машины на распродаже и сортировать по убыванию цены
+
+const carsOnSale = (cars) => {
+  return cars.filter(car => car.onSale)
+  .sort((a, b) => b.price - a.price)
+  
+
+}
+console.table(carsOnSale(vehicles))
+
 //Реализовать фильтер по свойству amount и получить
 //только название модели
 
@@ -222,24 +232,28 @@ const vehicles = [
 // console.log(planetLangth);
 
 
-const ownFilter = (arr, callback) => {
-  const newArray = []
-  for (let i = 0; i < arr.length; i += 1) {
-    if (callback(arr[i], i, arr)) {
-      newArray.push(arr[i]);
-   };
-  }
-  return newArray;
-}
+// const ownFilter = (arr, callback) => {
+//   const newArray = []
+//   for (let i = 0; i < arr.length; i += 1) {
+//     if (callback(arr[i], i, arr)) {
+//       newArray.push(arr[i]);
+//    };
+//   }
+//   return newArray;
+// }
 
-const values = [51, -3, 27, 100500, 21, 68, -42, -37, 100001];
+// const values = [51, -3, 27, 100500, 21, 68, -42, -37, 100001];
 
-const positiveValues = ownFilter(values, (value, index, arr) =>
-{
-  // console.log(value); console.log(index); console.log(arr);
-  return value >= 0
-});
-console.log(positiveValues);
+// const positiveValues = ownFilter(values, (value, index, arr) =>
+// {
+//   // console.log(value); console.log(index); console.log(arr);
+//   return value >= 0
+// });
+// console.log(positiveValues);
+
+
+
+
 
 
 

@@ -246,43 +246,43 @@
 //6. Собрать в allTopics массив всех предметов всех курсов
 //Выполнить фильтрацию, оставив в uniqueTopics только уникальные элементы
 
-const courses = [
-  {
-    name: "Basic HTML+CSS",
-    topics: ["VSCode", "HTML", "CSS", "GitHub", "GitHub Desctop"],
-  },
-  {
-    name: "Intermediate HTML+CSS",
-    topics: ["VSCode", "HTML", "CSS", "GitHub", "Git", "Terminal"],
-  },
-  {
-    name: "Basic JavaScript",
-    topics: [
-      "VSCode",
-      "Type system",
-      "Loops",
-      "Function",
-      "Git",
-      "Conditions",
-      "Classes",
-      "GitHub",
-      "DOM",
-    ],
-  },
-  {
-    name: "Intermediate JavaScript",
-    topics: [
-      "VSCode",
-      "NPM",
-      "Bundlers",
-      "Transpiling",
-      "Git",
-      "Promises",
-      "AJAX",
-      "GitHub",
-    ],
-  },
-];
+// const courses = [
+//   {
+//     name: "Basic HTML+CSS",
+//     topics: ["VSCode", "HTML", "CSS", "GitHub", "GitHub Desctop"],
+//   },
+//   {
+//     name: "Intermediate HTML+CSS",
+//     topics: ["VSCode", "HTML", "CSS", "GitHub", "Git", "Terminal"],
+//   },
+//   {
+//     name: "Basic JavaScript",
+//     topics: [
+//       "VSCode",
+//       "Type system",
+//       "Loops",
+//       "Function",
+//       "Git",
+//       "Conditions",
+//       "Classes",
+//       "GitHub",
+//       "DOM",
+//     ],
+//   },
+//   {
+//     name: "Intermediate JavaScript",
+//     topics: [
+//       "VSCode",
+//       "NPM",
+//       "Bundlers",
+//       "Transpiling",
+//       "Git",
+//       "Promises",
+//       "AJAX",
+//       "GitHub",
+//     ],
+//   },
+// ];
 
 // const getSubjects = (courses) => {
 //   return courses
@@ -290,10 +290,33 @@ const courses = [
 //     .filter((course, idx, arr) => arr.indexOf(course) === idx);
 // };
 
-const getSubjects = (courses) => {
-  return courses
-    .reduce((previous, course) => [...previous, ...course.topics], [])
-    .filter((course, idx, arr) => arr.indexOf(course) === idx);
-};
+// const getSubjects = (courses) => {
+//   return courses
+//     .reduce((previous, course) => [...previous, ...course.topics], [])
+//     .filter((course, idx, arr) => arr.indexOf(course) === idx);
+// };
 
-console.log(getSubjects(courses));
+// console.log(getSubjects(courses));
+//Вернуть объект в котором указывается количество тегов
+const tweets = [
+  { id: "000", likes: 5, tags: ["js", "nodejs"] },
+  { id: "001", likes: 2, tags: ["html", "css"] },
+  { id: "002", likes: 17, tags: ["html", "js", "nodejs"] },
+  { id: "003", likes: 8, tags: ["css", "react"] },
+  { id: "004", likes: 0, tags: ["js", "nodejs", "react"] },
+];
+const getTotalTags = (tweets) => {
+  return tweets
+    .flatMap((tweet) => tweet.tags)
+    .reduce((acc, tweet) => {
+      if (!acc[tweet]) {
+        acc[tweet] = 1;
+      } else {
+        acc[tweet] = acc[tweet] + 1;
+      }
+      //   console.log(tweet);
+      // console.log(acc[tweet]);
+      return acc;
+    }, {});
+};
+console.log(getTotalTags(tweets));

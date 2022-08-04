@@ -330,14 +330,12 @@ const tweets = [
 // };
 // console.log(getTotalTags(tweets));
 
-
-
 //Создание массива значений Фаренгейта из массива значений Цельсия
 // (32 °F − 32) × 5/9 = 0 °C
 // t * 1.8 + 32;
 
 let celsius = [-15, -5, 0, 10, 16, 20, 24, 32];
-const farenherit = celsius.map(temp => temp * 1.8 + 32);
+const farenherit = celsius.map((temp) => temp * 1.8 + 32);
 // console.log(farenherit);
 
 // Создать маркированный список.
@@ -346,29 +344,97 @@ const farenherit = celsius.map(temp => temp * 1.8 + 32);
 //* Четным li указать красный фон, нечетным -- синим
 //Для выполнения задания используйте createElement
 
-const listEl = document.createElement('ol');
-const addButton = document.createElement('button');
-addButton.textContent = 'Add';
-const removeButton = document.createElement('button');
-removeButton.textContent = 'Remove';
-const inputEl = document.createElement('input');
-document.body.append(addButton, removeButton, inputEl, listEl);
-addButton.addEventListener('click', () => {
-  const value = inputEl.value;
-  if (!value) {
-    console.log('Введіть значення');
+// const listEl = document.createElement("ol");
+// const addButton = document.createElement("button");
+// addButton.textContent = "Add";
+// const removeButton = document.createElement("button");
+// removeButton.disabled = true;
+// removeButton.textContent = "Remove";
+// const inputEl = document.createElement("input");
+// document.body.append(addButton, removeButton, inputEl, listEl);
+
+// addButton.addEventListener("click", () => {
+//   const value = inputEl.value;
+//   if (!value) {
+//     console.log("Введіть значення");
+//     return;
+//   }
+//   const liEl = document.createElement("li");
+//   liEl.textContent = value;
+//   listEl.append(liEl);
+//   inputEl.value = "";
+//   const isEven = listEl.children.length % 2 === 0;
+//   liEl.style.backgroundColor = isEven ? "red" : "blue";
+//   removeButton.disabled = false;
+// });
+
+// removeButton.addEventListener("click", () => {
+//   const lastEl = listEl.lastElementChild;
+//   lastEl.remove();
+//   console.log(listEl.children.length === 0);
+//   if (listEl.children.length === 0) {
+//     removeButton.disabled = true;
+//   }
+// });
+
+// Напиши скрипт створення і очищення колекції елементів.
+// Користувач вводить кількість елементів в input і натискає кнопку
+// Створити, після чого рендериться колекція.Натисненням на кнопку
+// Очистити, колекція елементів очищається.
+
+// {/* <div id="controls">
+//   <input type="number" min="1" max="100" step="1" />
+//   <button type="button" data-create>Create</button>
+//   <button type="button" data-destroy>Destroy</button>
+// </div>
+
+// <div id="boxes"></div> */}
+// Створи функцію createBoxes(amount), яка приймає один параметр - число.
+// Функція створює стільки < div >, скільки вказано в amount і додає їх у
+// div#boxes.
+
+// Розміри найпершого <div> - 30px на 30px.
+// Кожен елемент після першого повинен бути ширшим і вищим від попереднього
+// на 10px.
+// Всі елементи повинні мати випадковий колір фону у форматі HEX.
+// Використовуй готову функцію getRandomHexColor для отримання кольору.
+// function getRandomHexColor() {
+//   return `#${Math.floor(Math.random() * 16777215)
+//     .toString(16)
+//     .padStart(6, 0)}`;
+// }
+// Створи функцію destroyBoxes(), яка очищає вміст div#boxes,
+//   у такий спосіб видаляючи всі створені елементи.
+
+function getRandomHexColor() {
+  return `#${Math.floor(Math.random() * 16777215)
+    .toString(16)
+    .padStart(6, 0)}`;
+}
+
+const inputEl = document.querySelector("input");
+const createBtn = document.querySelector("[data-create]");
+const destroyBtn = document.querySelector("[data-destroy]");
+const boxesEl = document.querySelector("#boxes");
+
+createBtn.addEventListener("click", () => {
+  if (!inputEl.value) {
+    console.log("Введіть значення!");
     return;
   }
-  const liEl = document.createElement('li');
-  liEl.textContent = value;
-  listEl.append(liEl);
-  inputEl.value = '';
-console.log(listEl.children);
-const isEven = listEl.children.length%2 === 0;
-liEl.style.backgroundColor = isEven ? 'red' : 'blue';
-console.log(isEven);
+  const amount = Number(inputEl.value);
+  for (let i = 0; i < amount; i += 1) {
+    console.log(i);
+    const boxEl = document.createElement("div");
+    boxEl.style.width = `${30 + i * 10}px`;
+    boxEl.style.height = `${30 + i * 10}px`;
+
+    boxEl.style.backgroundColor = getRandomHexColor();
+    boxesEl.append(boxEl);
+  }
+  inputEl.value = "";
 });
 
-
-
-
+destroyBtn.addEventListener("click", () => {
+  boxesEl.innerHTML = "";
+});

@@ -1,3 +1,5 @@
+"use strict"
+
 //1. Используя функцию if...else,
 //напишите код, который будет спрашивать:
 //"Какое официальное название JavaScript?"
@@ -406,35 +408,78 @@ const farenherit = celsius.map((temp) => temp * 1.8 + 32);
 // Створи функцію destroyBoxes(), яка очищає вміст div#boxes,
 //   у такий спосіб видаляючи всі створені елементи.
 
+// function getRandomHexColor() {
+//   return `#${Math.floor(Math.random() * 16777215)
+//     .toString(16)
+//     .padStart(6, 0)}`;
+// }
+
+// const inputEl = document.querySelector("input");
+// const createBtn = document.querySelector("[data-create]");
+// const destroyBtn = document.querySelector("[data-destroy]");
+// const boxesEl = document.querySelector("#boxes");
+
+// createBtn.addEventListener("click", () => {
+//   if (!inputEl.value) {
+//     console.log("Введіть значення!");
+//     return;
+//   }
+//   const amount = Number(inputEl.value);
+//   for (let i = 0; i < amount; i += 1) {
+//     console.log(i);
+//     const boxEl = document.createElement("div");
+//     boxEl.style.width = `${30 + i * 10}px`;
+//     boxEl.style.height = `${30 + i * 10}px`;
+
+//     boxEl.style.backgroundColor = getRandomHexColor();
+//     boxesEl.append(boxEl);
+//   }
+//   inputEl.value = "";
+// });
+
+// destroyBtn.addEventListener("click", () => {
+//   boxesEl.innerHTML = "";
+// });
+
+
+
+//Создать небольшую игру:)
+// - Изначально на экране пользователя будет отображаться
+//какая - то форма (круг, квадрат, прямоулольник)
+// - При нажатии на нее в рандомном порядке форма должна
+//меняться на другую
+// - Форма каждый раз должна появляться в разных местах на странице
+// - Цвет формы в рандомном порядке меняется,
+const forms = [
+  'width: 100px; height: 100px; border-width: 1px; border-color: #000000',
+  'width: 100px; height: 100px; border-radius: 50%; border-width: 1px; border-color: #000000',
+  'width: 150px; height: 100px; border-width: 1px; border-color: #000000',
+  'width: 200px; height: 100px; border-radius: 100px / 50px;',
+  'width: 150px; height: 100px; transform: skew(20deg);',
+];
 function getRandomHexColor() {
-  return `#${Math.floor(Math.random() * 16777215)
-    .toString(16)
-    .padStart(6, 0)}`;
+  return `#${Math.floor(Math.random() * 16777215).toString(16)}`;
+}
+const randomither = max => {
+  return Math.floor(Math.random() * max);
+};
+
+const boxesEl = document.querySelector("#boxes");
+const formsRandom = document.createElement('div');
+
+
+boxesEl.append(formsRandom);
+
+const updateForm = () => {
+  const index = randomither(forms.length);
+formsRandom.style.cssText = forms[index];
+formsRandom.style.backgroundColor = getRandomHexColor();
+  formsRandom.style.position = 'absolute';
+  formsRandom.style.top = `${randomither(100)}%`
+  formsRandom.style.left = `${randomither(100)}%`
 }
 
-const inputEl = document.querySelector("input");
-const createBtn = document.querySelector("[data-create]");
-const destroyBtn = document.querySelector("[data-destroy]");
-const boxesEl = document.querySelector("#boxes");
+updateForm();
+boxesEl.addEventListener('click', updateForm)
 
-createBtn.addEventListener("click", () => {
-  if (!inputEl.value) {
-    console.log("Введіть значення!");
-    return;
-  }
-  const amount = Number(inputEl.value);
-  for (let i = 0; i < amount; i += 1) {
-    console.log(i);
-    const boxEl = document.createElement("div");
-    boxEl.style.width = `${30 + i * 10}px`;
-    boxEl.style.height = `${30 + i * 10}px`;
 
-    boxEl.style.backgroundColor = getRandomHexColor();
-    boxesEl.append(boxEl);
-  }
-  inputEl.value = "";
-});
-
-destroyBtn.addEventListener("click", () => {
-  boxesEl.innerHTML = "";
-});

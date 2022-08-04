@@ -338,4 +338,37 @@ const tweets = [
 
 let celsius = [-15, -5, 0, 10, 16, 20, 24, 32];
 const farenherit = celsius.map(temp => temp * 1.8 + 32);
-console.log(farenherit);
+// console.log(farenherit);
+
+// Создать маркированный список.
+//Создать кнопки "Add" "Remove", которые будут менять состав списка
+//Создать input с которого будем получать значение, которое будет в li
+//* Четным li указать красный фон, нечетным -- синим
+//Для выполнения задания используйте createElement
+
+const listEl = document.createElement('ol');
+const addButton = document.createElement('button');
+addButton.textContent = 'Add';
+const removeButton = document.createElement('button');
+removeButton.textContent = 'Remove';
+const inputEl = document.createElement('input');
+document.body.append(addButton, removeButton, inputEl, listEl);
+addButton.addEventListener('click', () => {
+  const value = inputEl.value;
+  if (!value) {
+    console.log('Введіть значення');
+    return;
+  }
+  const liEl = document.createElement('li');
+  liEl.textContent = value;
+  listEl.append(liEl);
+  inputEl.value = '';
+console.log(listEl.children);
+const isEven = listEl.children.length%2 === 0;
+liEl.style.backgroundColor = isEven ? 'red' : 'blue';
+console.log(isEven);
+});
+
+
+
+

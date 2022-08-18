@@ -1,17 +1,18 @@
 import storageApi from "./storage"
-console.log(storageApi);
 const CONTACT_FORM_KEY = "contact-form-key";
 
 const formRef = document.querySelector(".js-contact-form");
-console.log(formRef);
 initialPage()
 formRef.addEventListener('input', handleInput);
-const formData = {};
 function handleInput(event) {
-  const { name, value } = event.target;
+    let savedData = storageApi.load(CONTACT_FORM_KEY);
+    if (!savedData) {
+        savedData = {}
+    }
+        const { name, value } = event.target;
 
-  formData[name] = value;
-  storageApi.save(CONTACT_FORM_KEY, formData);
+  savedData[name] = value;
+  storageApi.save(CONTACT_FORM_KEY, savedData);
   
 }
 
@@ -20,11 +21,19 @@ function initialPage() {
     if (savedData) {
         Object.entries(savedData).forEach(([name, value]) => {
 formRef.elements[name].value = value;
-            console.log(name);
-            console.log(value);
         })
 
     }
-    console.log(savedData);
 }
 
+
+const handleSubmit = (event) => { 
+event.preventDefault()
+    const { name, email, message } = event.currentTarget;
+    console.log({name: name.value, email: email.value, message: message.value});
+    event.currentTarget.reset()
+    storageApi.remove(CONTACT_FORM_KEY);
+}
+
+
+formRef.addEventListener("submit", handleSubmit)

@@ -11,17 +11,29 @@
   <body>
     <p><a href="index.html">Go back</a></p>
 
-    <form class="feedback-form" autocomplete="off">
-      <label>
-        Email
-        <input type="email" name="email" autofocus />
-      </label>
-      <label>
-        Message
-        <textarea name="message" rows="8"></textarea>
-      </label>
-      <button type="submit">Submit</button>
-    </form>
+    <div class="container">
+      <form class="contact-form js-contact-form">
+        <input
+          name="name"
+          type="text"
+          class="contact-form-input"
+          placeholder="Введите имя"
+        />
+        <input
+          name="email"
+          type="email"
+          class="contact-form-input js-contact-email"
+          placeholder="Введите email"
+        />
+        <textarea
+          class="contact-form-message"
+          name="message"
+          placeholder="Введите сообщение"
+        ></textarea>
+        <button class="contact-form-submit" type="submit">submit</button>
+      </form>
+    </div>
+
 
     <script src="js/03-feedback.js" type="module"></script>
   </body>

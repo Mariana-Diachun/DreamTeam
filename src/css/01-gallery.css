@@ -116,3 +116,31 @@
 ul {
   list-style: none;
 }
+
+.tui-pagination.is-hidden {
+  display: none;
+}
+
+#tui-pagination-container {
+  display: flex;
+  justify-content: center;
+}
+#tui-pagination-container .tui-page-btn {
+  background-color: yellow;
+  color: blue;
+  border-radius: 4px;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+ #tui-pagination-container .tui-is-selected {
+   background-color: blue;
+   color: yellow;
+   border-radius: 4px;
+   width: 40px;
+   height: 40px;
+
+ }

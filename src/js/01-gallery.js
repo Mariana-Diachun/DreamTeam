@@ -4,7 +4,9 @@ import { UnsplashApi } from "./unsplash-api";
 import { createGalleryCards } from "./create_gallery_card";
 const listRef = document.querySelector(".js-gallery");
 const searchForm = document.querySelector(".js-search-form");
+const paginationContainer = document.querySelector(".tui-pagination")
 const unsplashApi = new UnsplashApi();
+
 
 const options = {
   totalItems: 0,
@@ -21,17 +23,27 @@ unsplashApi.getTrandPhotos(page).then(({ total, results }) => {
   const markup = createGalleryCards(results);
   listRef.innerHTML = markup;
   pagination.reset(total);
-});
+  paginationContainer.classList.remove("is-hidden");
+})
+  .catch(error => {
+    console.log(error);
+  });
 
 pagination.on('afterMove', getMorePhotos);
 
 function getMorePhotos (event) {
      const currentPage = event.page;
-     unsplashApi.getTrandPhotos(currentPage).then(({ results }) => {
+  unsplashApi.getTrandPhotos(currentPage)
+    .then(({ results }) => {
       const markup = createGalleryCards(results);
       listRef.innerHTML = markup;
       
-    });
+    })
+      .catch(error => {
+    console.log(error);
+      paginationContainer.classList.add("is-hidden");
+
+      });
 }
 
 searchForm.addEventListener("submit", handleSubmit);
@@ -50,11 +62,25 @@ function handleSubmit(event) {
   pagination.off('afterMove', getMoreSearchPhotos);
   pagination.on('afterMove', getMoreSearchPhotos);
   unsplashApi.query = query.value;
-  unsplashApi.getSearchPhotos(page).then(({ total, results }) => {
+  unsplashApi.getSearchPhotos(page)
+    .then(({ total, results }) => {
+      if (total === 0) {
+      paginationContainer.classList.add("is-hidden");
+        listRef.innerHTML = '';
+     return }
   const markup = createGalleryCards(results);
   listRef.innerHTML = markup;
   pagination.reset(total);
-  });
+        paginationContainer.classList.remove("is-hidden");
+
+    })
+          .catch(error => {
+    console.log(error);
+      paginationContainer.classList.add("is-hidden");
+
+      });
+
+    
   
   console.log(query.value);
 }
